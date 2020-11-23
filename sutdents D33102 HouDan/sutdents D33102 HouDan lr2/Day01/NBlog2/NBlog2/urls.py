@@ -26,4 +26,5 @@ urlpatterns = [
     path('create_driver/', views.create_view),
     path('update_driver/<int:pk>/', views.driverUpdateView.as_view()),
     path('TwoApp/', include("TwoApp.urls")),
+    path('drivers/', views.drivers.as_view()),
 ]

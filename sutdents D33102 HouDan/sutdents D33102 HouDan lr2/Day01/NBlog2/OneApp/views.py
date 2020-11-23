@@ -15,6 +15,9 @@ def detail(request, driver_id):
 class driver_list(ListView):
     model = Ownership
     template_name = "driver_list.html"
+class drivers(ListView):
+    model = driver
+    template_name = "drivers.html"
 
 class driver_deta(DetailView):
     model = driver

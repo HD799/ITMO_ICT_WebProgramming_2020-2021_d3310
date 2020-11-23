@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>driver</title>
+</head>
+<body>
+{% for driver in driver_list %}
+    <p>ID:{{ driver.id }}</p>
+    <p>NAME：{{ driver.first_name }}{{ driver.last_name }}</p>
+    <p>Birthday:{{ driver.birthday }}</p>
+    <hr>
+{% endfor %}
+<a href="/create_driver/">Create driver</a>
+<a href="/delete_dirver_deta/{{ driver.id }}/">Delete</a>
+<a href="/update_driver/{{ driver.id }}/">Update</a>
+<a href="/driver_list/">Get Back</a>
+
+</body>
+</html>
