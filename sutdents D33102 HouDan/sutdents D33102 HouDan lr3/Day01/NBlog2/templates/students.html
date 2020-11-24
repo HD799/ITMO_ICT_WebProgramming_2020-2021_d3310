@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>studens</title>
+</head>
+<body>
+<ul>
+    <hi>Students</hi>
+    {% for student in dataset %}
+    <li>name:{{ student.S_name }}</li>
+    <li> class:{{ student.S_class }}</li>
+        <hr/>
+    {% endfor %}
+
+</ul>
+</body>
+</html>

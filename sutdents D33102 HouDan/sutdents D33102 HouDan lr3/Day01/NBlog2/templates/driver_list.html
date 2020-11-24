@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver List</title>
+</head>
+<body>
+<span><h2>Drive Ownner List</h2></span>
+{% for owner in ownership_list %}
+    <li>Name:<a href="/driver_deta/{{ owner.owner.id }}/">{{ owner.owner.first_name }} {{ owner.owner.last_name }}</a>
+    </li>
+    <li>Car:<a href="/car_deta/{{ owner.OW_Car.id }}/">{{ owner.OW_Car.state_number }}</a></li>
+    <li>Day:{{ owner.Ownership_day }}</li>
+    <hr>
+{% endfor %}
+<a href="/drivers/">Drivers</a>
+
+</body>
+</html>

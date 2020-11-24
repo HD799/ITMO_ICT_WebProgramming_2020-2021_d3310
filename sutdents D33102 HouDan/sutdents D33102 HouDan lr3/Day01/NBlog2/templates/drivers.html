@@ -7,11 +7,13 @@
 <body>
 {% for driver in driver_list %}
     <p>ID:{{ driver.id }}</p>
-    <p>NAME：<a href="/driver_deta/{{ owner.owner.id }}/">{{ owner.owner.first_name }} {{ owner.owner.last_name }}</a></p>
+    <p>NAME：{{ driver.first_name }}{{ driver.last_name }}</p>
     <p>Birthday:{{ driver.birthday }}</p>
     <hr>
 {% endfor %}
 <a href="/create_driver/">Create driver</a>
+<a href="/delete_dirver_deta/{{ driver.id }}/">Delete</a>
+<a href="/update_driver/{{ driver.id }}/">Update</a>
 <a href="/driver_list/">Get Back</a>
 
 </body>
