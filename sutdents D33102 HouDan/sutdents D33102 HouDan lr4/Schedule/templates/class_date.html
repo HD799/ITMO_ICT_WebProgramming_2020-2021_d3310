@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Deta</title>
+</head>
+<body>
+    <h3>Number:{{ class.group_number }}</h3>
+    <li>ID:{{ class.id }}</li>
+    <li>students:
+        {% for i in class.student_set.all  %}
+            <p>{{forloop.counter}}:<a href="/student_date/{{ i.id }}/">{{ i.name }}</a></p>
+        {% empty %}
+            <p>没有数据None</p>
+        {% endfor %}
+    <Li>
+    <a href="/D-S/schedule_list/{{ class.id }}/">Schedule</a>
+    <a href="/class_list/">Get Back</a>
+</body>
+</html>

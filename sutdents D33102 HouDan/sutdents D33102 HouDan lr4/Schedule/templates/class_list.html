@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+</head>
+<body>
+<h2>Class</h2>
+{% for group in class_list %}
+    <a href="/class_date/{{ group.id }}/"><h3>{{ group.group_number }}</h3></a>
+    <p>id:{{ group.id }}</p>
+    <hr>
+{% endfor %}
+<a href="/class_create/">create class</a>|
+<a href="/student_list/">Student list</a>
+
+</body>
+</html>

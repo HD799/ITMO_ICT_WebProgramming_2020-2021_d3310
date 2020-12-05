@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Deta</title>
+</head>
+<body>
+    <h3>Name:{{ student.name }}</h3>
+    <li>ID:{{ student.id }}</li>
+    <li>Genser:{{ student.genser }}</li>
+    <li>Group number: <a href="/class_date/{{ student.id_group.id }}/">{{ student.id_group.group_number }}</a></li>
+    <a href="/student_list/">Get Back</a>
+    <a href="/student_delete/{{ student.id }}/">Delete</a>
+    <a href="/student_update/{{ student.id }}/">Update</a>
+    <p><a href="/D-S/schedule_list/{{ student.id_group.id }}/">Schedule</a></p>
+</body>
+</html>

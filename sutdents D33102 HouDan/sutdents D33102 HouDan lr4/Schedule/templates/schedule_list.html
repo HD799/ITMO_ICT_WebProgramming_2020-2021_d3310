@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+</head>
+<body>
+<h2>Schedule</h2>
+<h3>Discipline|-------Time-------|Teacher</h3>
+<h3>Monday</h3>
+{% for sc in Monday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}<hr>
+<h3>Tuesday</h3>
+{% for sc in Tuesday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}
+<hr>
+<h3>Wednesday</h3>
+{% for sc in Wednesday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}
+<hr>
+<h3>Thursday</h3>
+{% for sc in Thursday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}
+<hr>
+<h3>Friday</h3>
+{% for sc in Friday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}
+<hr>
+<h3>Saturday</h3>
+{% for sc in Saturday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}
+<hr>
+<h3>Sunday</h3>
+{% for sc in Sunday %}
+    <p>{{ sc.id_discipline.subject }}|{{ sc.date}}|{{ sc.id_teacher.name }}</p>
+{% empty %}
+    off day
+{% endfor %}
+<hr>
+<a href="/class_list/">class list</a>
+
+</body>
+</html>
