@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Deta</title>
+</head>
+<body>
+{% extends "base3.html" %}
+  {% block nav %} {{ block.super }}
+    <h3>Number:{{ class.group_number }}</h3>
+    <li>ID:{{ class.id }}</li>
+    <li>students:
+        {% for i in class.student_set.all  %}
+            <p>{{forloop.counter}}:<a href="/student_date/{{ i.id }}/">{{ i.name }}</a></p>
+        {% empty %}
+            <p>没有数据None</p>
+        {% endfor %}
+    <Li>
+    <a href="/D-S/schedule_list/{{ class.id }}/">Schedule</a>
+    <a href="/class_list/">Get Back</a>
+{% endblock %}
+</body>
+</html>

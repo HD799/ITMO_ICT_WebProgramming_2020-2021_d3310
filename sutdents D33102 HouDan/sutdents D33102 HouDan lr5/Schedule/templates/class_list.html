@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+</head>
+<body>
+  {% extends "base3.html" %}
+  {% block nav %} {{ block.super }}
+      <h2>Class</h2>
+{% for group in class_list %}
+    <a href="/class_date/{{ group.id }}/"><h3>{{ group.group_number }}</h3></a>
+    <p>id:{{ group.id }}</p>
+    <hr>
+{% endfor %}
+<a href="/class_create/">create class</a>|
+<a href="/student_list/">Student list</a>|
+<a href="/D-S/teacher_list/">Teacher list</a>
+  {% endblock %}
+</body>
+</html>

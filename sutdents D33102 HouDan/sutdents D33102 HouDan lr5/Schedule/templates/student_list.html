@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sdudents</title>
+</head>
+<body>
+{% extends "base3.html" %}
+  {% block nav %} {{ block.super }}
+{% for student in student_list %}
+    <a href="/student_date/{{ student.id }}"><h3>{{ student.name }}</h3></a>
+    <p>id:{{ student.id }}</p>
+    <p>genser:{{ student.genser }}</p>
+    <p>group number:{{ student.id_group.group_number }}</p>
+    <hr>
+{% endfor %}
+<button><a href="/student_create/">create student</a></button>
+<hr>
+<button><a href="/class_create/">create class</a></button>|
+<button><a href="/class_list">Class list</a></button>|
+<button><a href="/createhw/">Set Homework</a></button>
+
+{% endblock %}
+</body>
+</html>

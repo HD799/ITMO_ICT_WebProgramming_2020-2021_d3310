@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher</title>
+</head>
+<body>
+<h2>Teachers</h2>
+<h3>mathematics</h3>
+{% for i in mathematics %}
+    <p>name teacher:{{ i.name }}</p>
+{% empty %}
+    None
+{% endfor %}
+<hr>
+<h3>information Toechnolgy</h3>
+{% for i in informationToechnolgy %}
+    <p>name teacher:{{ i.name }}</p>
+{% empty %}
+    None
+{% endfor %}
+<hr>
+<h3>physical</h3>
+{% for i in physical %}
+    <p>name teacher:{{ i.name }}</p>
+{% empty %}
+    None
+{% endfor %}
+<hr>
+<h3>English</h3>
+{% for i in English %}
+    <p>name teacher:{{ i.name }}</p>
+{% empty %}
+    None
+{% endfor %}
+<hr>
+<h3>physicaleducation</h3>
+{% for i in physicaleducation %}
+    <p>name teacher:{{ i.name }}</p>
+{% empty %}
+    None
+{% endfor %}
+<hr>
+
+<a href="/class_list/">class list</a>
+
+</body>
+</html>

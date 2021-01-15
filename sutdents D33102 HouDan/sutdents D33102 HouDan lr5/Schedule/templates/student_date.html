@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Deta</title>
+</head>
+<body>
+{% extends "base3.html" %}
+  {% block nav %} {{ block.super }}
+<h3>Name:{{ student.name }}</h3>
+<li>ID:{{ student.id }}</li>
+<li>Genser:{{ student.genser }}</li>
+<li>Group number: <a href="/class_date/{{ student.id_group.id }}/">{{ student.id_group.group_number }}</a></li>
+<button><a href="/student_delete/{{ student.id }}/">Delete</a></button>
+<button><a href="/student_update/{{ student.id }}/">Update</a></button>
+<hr>
+<h3>HomeWorke:</h3>
+<table style="width: 1600px;margin: auto">
+    <caption>Homwork</caption>
+    <tr>
+        <td>Number</td>
+        <td>discipline</td>
+        <td>teacher</td>
+        <td>release time</td>
+        <td>Complete time</td>
+        <td>Carry out</td>
+        <td>Delete</td>
+        <td>Update</td>
+    </tr>
+    {% for h in student.homworke_set.all %}
+        <tr>
+        <td width="200" height="80">{{ h.id_student.name }},{{ forloop.counter }} HW</td>
+        <td width="200" height="80">{{ h.id_discipline.subject }}</td>
+        <td width="200" height="80">{{ h.id_teacher.name }} </td>
+        <td width="250" height="80">{{ h.release_time }}</td>
+        <td width="250" height="80">{{ h.Complete_time }}</td>
+        <td width="150" height="80">{{ h.carry_out }}</td>
+        <td width="100" height="80">
+            <button><a href="/delehw/{{ h.id }}/">Delete</a></button></td>
+        <td width="100" height="80">
+            <button><a href="/updetahw/{{ h.id }}/">Updeta</a></button></td>
+    {% empty %}
+        <td colspan="7">Not homework</td>
+    {% endfor %}
+    </tr>
+</table>
+
+
+
+
+<hr>
+<button><a href="/class_list/">Get Back</a></button>
+<p>
+    <button><a href="/student_list/">Get Back</a></button>
+    <button><a href="/D-S/schedule_list/{{ student.id_group.id }}/">Schedule</a></button>
+</p>
+{% endblock %}
+</body>
+</html>

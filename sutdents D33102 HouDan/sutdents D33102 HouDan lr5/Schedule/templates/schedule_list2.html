@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>schedule list</title>
+</head>
+<body>
+{% extends "base3.html" %}
+  {% block nav %} {{ block.super }}
+<h3 align="center">schedule list</h3>
+<div class="container-fluid" >
+
+        <table class="table-bordered text-center table-bordered table-striped table-hover table-responsive"
+               style="width: 600px;margin: auto">
+            <caption>Schedule List/{{ cl.group_number }}</caption>
+            <tr>
+                <td>Discipline</td>
+                <td>Time</td>
+                <td>Teacher</td>
+            </tr>
+            <tr>
+                <td colspan="3">Monda
+                {{ Monday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Monday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="3">Tuesday
+                {{ Tuesday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Tuesday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="3">Wednesday
+                {{ Wednesday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Wednesday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="3">Thursday
+                {{ Thursday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Thursday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="3">Friday
+                {{ Friday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Friday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="3">Saturday
+                {{ Saturday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Saturday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="3">Sunday
+                {{ Sunday.first.date|date:"F j" }}
+                <td>
+            </tr>
+            {% for sc in Sunday %}
+                <tr>
+                <td width="200" height="80">{{ sc.id_discipline.subject }}</td>
+                <td width="200" height="80">{{ sc.date|time:'P' }}</td>
+                <td width="200" height="80">{{ sc.id_teacher.name }}</td>
+            {% empty %}
+                <td colspan="3">off day</td>
+            {% endfor %}
+            </tr>
+        </table>
+
+</div>
+<a href="/class_list/"><button>class list</button></a>
+<a href="/D-S/update_schedule_list/{{ cl.id }}"><button>updata shedule</button></a>
+<a href="/D-S/create_schedule/"><button>Create shedule</button></a>
+{% endblock %}
+</body>
+</html>
